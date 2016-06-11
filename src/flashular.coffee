@@ -32,7 +32,7 @@ angular.module "flashular", []
 
 .directive "flashAlerts", (flash) ->
 
-  restrict: "E"
+  restrict: "AE"
   replace: yes
   scope:
     closeable: "="
