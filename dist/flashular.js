@@ -67,7 +67,7 @@
     return flash;
   }).directive("flashAlerts", function(flash) {
     return {
-      restrict: "E",
+      restrict: "AE",
       replace: true,
       scope: {
         closeable: "=",
