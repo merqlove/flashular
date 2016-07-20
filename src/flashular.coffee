@@ -1,6 +1,6 @@
 angular.module "flashular", []
 
-.factory "flash", ($rootScope) ->
+.factory "flash", ['$rootScope', ($rootScope) ->
 
   # Define the flash class.
   class Flash
@@ -29,8 +29,8 @@ angular.module "flashular", []
     flash.clear()
 
   return flash
-
-.directive "flashAlerts", (flash) ->
+]
+.directive "flashAlerts", ['flash', (flash) ->
 
   restrict: "AE"
   replace: yes
@@ -49,3 +49,4 @@ angular.module "flashular", []
   link: (scope) ->
     scope.flash = flash.now
     scope.alertTypes = ["info", "success", "error", "warning", "danger"]
+]
